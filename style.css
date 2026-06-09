@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family:
+        "Helvetica Neue",
+        Arial,
+        "Hiragino Kaku Gothic ProN",
+        "Hiragino Sans",
+        Meiryo,
+        sans-serif;
+
+    text-align: center;
+    background-color: #fcfcfc;
+    color: #333;
+}
+
+h1 {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+/* 地図とランキングを横並びにする */
+#main-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    width: 100%;
+}
+
+/* 地図の表示領域 */
+#map-container {
+    width: 800px;
+    height: 600px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ランキング全体 */
+#ranking-container {
+    width: 280px;
+    height: 600px;
+    box-sizing: border-box;
+    padding: 15px;
+
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+
+    text-align: left;
+    overflow-y: auto;
+}
+
+/* ランキングのタイトル */
+#ranking-container h2 {
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+
+    font-size: 20px;
+    text-align: center;
+
+    border-bottom: 2px solid #dddddd;
+}
+
+/* ランキング一覧 */
+#ranking-list {
+    margin: 0;
+    padding-left: 35px;
+}
+
+/* 各ランキング項目 */
+#ranking-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+
+    background-color: #f5f8fc;
+    border-radius: 6px;
+
+    font-size: 14px;
+}
+
+/* 都道府県名 */
+.ranking-prefecture {
+    font-weight: bold;
+}
+
+/* 軒数 */
+.ranking-value {
+    display: block;
+    margin-top: 4px;
+    color: #555555;
+}
+
+/* 1位 */
+#ranking-list li:nth-child(1) {
+    background-color: #fff4bf;
+}
+
+/* 2位 */
+#ranking-list li:nth-child(2) {
+    background-color: #eeeeee;
+}
+
+/* 3位 */
+#ranking-list li:nth-child(3) {
+    background-color: #f6ddc5;
+}
+
+/* 都道府県の境界線 */
+.prefecture {
+    stroke: #4ca6e2;
+    stroke-width: 0.5px;
+    transition: fill 0.2s;
+}
+
+/* マウスを乗せた都道府県 */
+.prefecture:hover {
+    fill: #ff7f0e !important;
+    cursor: pointer;
+}
+
+/* ツールチップ */
+#tooltip {
+    position: absolute;
+    padding: 8px 12px;
+
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.4;
+
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.85);
+
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+    pointer-events: none;
+}
+
+/* 非表示 */
+.hidden {
+    display: none;
+}
+
+/* 画面が狭い場合は縦並びにする */
+@media screen and (max-width: 1150px) {
+    #main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #ranking-container {
+        width: 800px;
+        height: auto;
+    }
+}
